@@ -134,6 +134,7 @@ p {
 
 .content {
   text-align: left;
+  padding-bottom: 1em;
 }
 
 /* footer */
@@ -142,15 +143,18 @@ footer {
   position: relative;
   background: #444444;
   height: 40px;
-  padding: 0;
   float: left;
   width: 100%;
   z-index: 10;
-}
-
-footer {
   font-size: 1.3em;
   text-align: center;
   color: #fff;
   padding: 1em 0 2em 0;
+}
+
+/* Часики */
+.clock {
+  left: 1%;
+  position: fixed;
+  font-size: 30px;
 }
