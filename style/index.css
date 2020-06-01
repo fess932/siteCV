@@ -12,6 +12,7 @@
 
 header h1 {
   padding-top: 2em;
+  padding-bottom: 1em;
   text-align: center;
 }
 
@@ -22,8 +23,8 @@ nav {
   position: relative;
   background: #444444;
   height: 40px;
-  margin: 30px 0;
   padding: 0;
+  margin-bottom: 2em;
   float: left;
   width: 100%;
   z-index: 10;
@@ -157,4 +158,20 @@ footer {
   left: 1%;
   position: fixed;
   font-size: 30px;
+}
+
+ol {
+  font-size: 1.2em;
+  padding: 1em 0 0 2em;
+}
+
+/* ////// emaoil */
+
+.email {
+  display: inline-block;
+  width: 200px;
+}
+
+.email * {
+  margin-bottom: 1em;
 }

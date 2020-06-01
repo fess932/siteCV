@@ -3,8 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Классификация современных антивирусных программ</title>
     <link rel="stylesheet" href="style/index.css" />
+    <style>
+      .carousel {
+        position: relative;
+        width: 500px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        background: #eee;
+        display: inline-block;
+        overflow: hidden;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 10px;
+        padding: 0;
+        background: #ddd;
+        border-radius: 15px;
+        border: none;
+        font-size: 50px;
+        line-height: 50px;
+        text-align: center;
+        display: block;
+        z-index: 10;
+      }
+
+      .arrow:focus {
+        outline: none;
+      }
+
+      .arrow:hover {
+        background: #ccc;
+        cursor: pointer;
+      }
+
+      .prev {
+        left: 7px;
+      }
+
+      .next {
+        right: 7px;
+      }
+
+      .gallery {
+        width: 9999px;
+        transition: 0.5s;
+      }
+
+      .gallery img {
+        float: left;
+        width: 500px;
+        height: 500px;
+      }
+    </style>
   </head>
   <body>
     <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
@@ -12,7 +65,12 @@
     <header><h1>Классификация современных антивирусных программ</h1></header>
     <nav>
       <ul>
-        <li><a href="index.html">Главная</a></li>
+        <li>
+          <a href="index.html">Главная</a>
+          <ul class>
+            <li><a href="signs.html">Признаки появления вирусов</a></li>
+          </ul>
+        </li>
         <li>
           <a href="classes.html">Классификация антивирусных программ</a>
           <ul class>
@@ -22,7 +80,7 @@
             <li><a href="class-doctor.html">Программы-доктора (фаги)</a></li>
             <li><a href="class-filter.html">Программы-фильтры (сторожа)</a></li>
             <li>
-              <a href="class-detector.html">Программы-вакцины (иммунизаторы)</a>
+              <a href="class-vaccine.html">Программы-вакцины (иммунизаторы)</a>
             </li>
           </ul>
         </li>
@@ -31,6 +89,18 @@
     </nav>
     <section>
       <h2>Компьютерные вирусы</h2>
+
+      <div class="carousel">
+        <button onclick="leftClick()" class="arrow prev">⇦</button>
+        <div class="gallery">
+          <img src="assets/doctor.jpg" alt="" />
+          <img src="assets/1265463273_virus.jpg" alt="" />
+          <img src="assets/3456a8f3ca9a0fc24ddde49e6b6a6fda.jpg" alt="" />
+          <img src="assets/img1.jpg" alt="" />
+          <img src="assets/vir_cry.jpg" alt="" />
+        </div>
+        <button onclick="rightClick()" class="arrow next">⇨</button>
+      </div>
 
       <div class="content">
         <p>
@@ -69,5 +139,37 @@
     <footer>2020</footer>
 
     <script src="js/index.js"></script>
+    <script>
+      let gallery = document.querySelector('.carousel .gallery')
+      let left = 0
+      let imgWidth = 500
+      let countImages = gallery.children.length
+      let maxWidth = countImages * imgWidth
+
+      console.log(maxWidth)
+      function leftClick() {
+        console.log(left)
+        if (left === 0) {
+          left = imgWidth - maxWidth
+          gallery.style.transform = `translateX(${left}px)`
+          return
+        }
+        left += imgWidth
+        gallery.style.transform = `translateX(${left}px)`
+      }
+      function rightClick() {
+        console.log(left)
+        if (-left + imgWidth >= maxWidth) {
+          left = 0
+          gallery.style.transform = `translateX(${left}px)`
+          console.log(left)
+          return
+        }
+        left -= imgWidth
+        gallery.style.transform = `translateX(${left}px)`
+        console.log(left)
+      }
+      console.log(gallery)
+    </script>
   </body>
 </html>

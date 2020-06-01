@@ -10,7 +10,12 @@
     <header><h1>Классификация современных антивирусных программ</h1></header>
     <nav>
       <ul>
-        <li><a href="index.html">Главная</a></li>
+        <li>
+          <a href="index.html">Главная</a>
+          <ul class>
+            <li><a href="signs.html">Признаки появления вирусов</a></li>
+          </ul>
+        </li>
         <li>
           <a href="classes.html">Классификация антивирусных программ</a>
           <ul class>
@@ -20,7 +25,7 @@
             <li><a href="class-doctor.html">Программы-доктора (фаги)</a></li>
             <li><a href="class-filter.html">Программы-фильтры (сторожа)</a></li>
             <li>
-              <a href="class-detector.html">Программы-вакцины (иммунизаторы)</a>
+              <a href="class-vaccine.html">Программы-вакцины (иммунизаторы)</a>
             </li>
           </ul>
         </li>
@@ -29,10 +34,39 @@
     </nav>
     <section>
       <h1>Об авторе</h1>
+
       <br />
-      <p>Ин</p>
-      <p><img height="500px" src="assets/happy.png" alt="" /></p>
+      <h3>«Сыктывкарский кооперативный техникум»</h3>
+      <p>Усачева Инна</p>
+      <p>Отправить сообщение автору</p>
+      <div class="email">
+        <input
+          class="email-address"
+          type="email"
+          name="asdf"
+          placeholder="Ваша почта"
+        />
+        <textarea
+          class="email-body"
+          placeholder="Введите ваше сообщение здесь"
+          name="фыва"
+          id=""
+          cols="20"
+          rows="5"
+        ></textarea>
+        <input onclick="clearEmail()" type="button" value="Отправить" />
+      </div>
     </section>
     <footer>2020</footer>
+    <script>
+      function clearEmail() {
+        console.log('asd')
+        let email = document.querySelector('.email-address')
+        let textemail = document.querySelector('.email-body')
+        email.value = ''
+        textemail.value = ''
+        alert('Отправлено!')
+      }
+    </script>
   </body>
 </html>
